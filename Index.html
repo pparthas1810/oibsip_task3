@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Temperature Conversion</title>
+	<script type="text/javascript">
+		function Convert() {
+			var TI = document.getElementById("TI").value;
+			var TU = document.getElementById("TU").value;
+			var convertedTemp;
+			if (TU === "Celsius") {
+				convertedTemp = (TI * 1.8) + 32;
+				document.getElementById("output").innerHTML = "Output : "+convertedTemp + " Fahrenheit";
+			} else {
+				convertedTemp = (TI - 32) / 1.8;
+				document.getElementById("output").innerHTML = "Output : "+ convertedTemp + " Celsius";
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Temperature Conversion</h1>
+	<label for="TI">Enter Temperature:</label>
+	<input type="text" id="TI" name="TI" required>
+	<select id="TU" name="TU">
+		<option value="Celsius">Celsius</option>
+		<option value="Fahrenheit">Fahrenheit</option>
+	</select>
+	<button type="button" onclick="Convert()">Convert</button>
+	<div id="output"></div>
+</body>
+</html>
